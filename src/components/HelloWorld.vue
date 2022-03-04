@@ -20,7 +20,6 @@
       const count = ref(0)
 
       const appName = import.meta.env.VITE_APP_TITLE
-      debugger
       return { count, appName }
     },
   })
