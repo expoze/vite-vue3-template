@@ -1,17 +1,19 @@
 <template>
-  <img alt="Vue logo" src="@/assets/logo.png" />
-  <HelloWorld msg="Hello Vue 3 + TypeScript + Vite" />
+  <!-- <img alt="Vue logo" src="@/assets/logo.png" /> -->
+  <IonApp>
+    <ion-router-outlet />
+  </IonApp>
 </template>
 
 <script lang="ts">
   import { defineComponent } from 'vue'
-
-  import HelloWorld from '@/components/HelloWorld.vue'
+  import { IonApp, IonRouterOutlet } from '@ionic/vue'
 
   export default defineComponent({
     name: 'App',
     components: {
-      HelloWorld,
+      IonRouterOutlet,
+      IonApp,
     },
   })
 </script>
