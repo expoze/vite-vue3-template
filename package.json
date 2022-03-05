@@ -11,7 +11,10 @@
     "lint:style": "stylelint src/**/*.{css,scss,vue}"
   },
   "dependencies": {
-    "vue": "^3.2.31"
+    "@vueuse/core": "^7.7.0",
+    "pinia": "^2.0.11",
+    "vue": "^3.2.31",
+    "vue-router": "^4.0.13"
   },
   "devDependencies": {
     "@types/node": "^17.0.21",

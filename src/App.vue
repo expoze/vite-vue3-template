@@ -1,6 +1,8 @@
 <template>
   <img alt="Vue logo" src="@/assets/logo.png" />
   <HelloWorld msg="Hello T" />
+
+  <router-view />
 </template>
 
 <script lang="ts">

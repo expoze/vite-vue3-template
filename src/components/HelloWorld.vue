@@ -3,24 +3,37 @@
 
   {{ appName }}
 
-  <button type="button" @click="count++">count is: {{ count }}</button>
+  <button type="button" @click="counter++">count is: {{ counter }}</button>
+  <div>pos mouse: {{ pos.x }}, {{ pos.y }}</div>
 </template>
 
 <script lang="ts">
-  import { ref, defineComponent } from 'vue'
+  import { ref, computed, defineComponent, reactive } from 'vue'
+  import { storeToRefs } from 'pinia'
+  import { useAppStore } from '@/stores'
+  import { useMouse } from '@vueuse/core'
+
   export default defineComponent({
     name: 'HelloWorld',
     props: {
       msg: {
         type: String,
-        required: true,
+        required: false,
       },
     },
     setup: () => {
-      const count = ref(0)
+      const appStore = useAppStore()
+      const { name, counter } = storeToRefs(appStore)
+
+      const { x, y } = useMouse()
+      const pos = reactive({ x, y })
 
       const appName = import.meta.env.VITE_APP_TITLE
-      return { count, appName }
+      return {
+        appName,
+        counter,
+        pos,
+      }
     },
   })
 </script>
